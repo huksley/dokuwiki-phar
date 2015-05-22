@@ -20,5 +20,6 @@ if (strstr($_SERVER["PATH_INFO"], ".css")) {
     header("Content-Type: application/octet-stream");
 }
 
+header("Cache-Control: max-age=3600,public");
 echo file_get_contents("phar://" . $_SERVER["SCRIPT_FILENAME"] . $_SERVER["PATH_INFO"]);
 ?>
