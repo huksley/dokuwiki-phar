@@ -13,17 +13,21 @@ PHAR supports using ZIP (renamed to PHAR). Startup entry specified in file .phar
 So for building just ZIP resulting dir and name it index.phar.
 
 ## Dirs and files from dokuwiki.tar.gz:
+
    > bin/
    > lib/
    > inc/
    > *.php
 
 ## Dirs and files from this project:
-  > *.php
-  > data/
-  > inc/ (if you want to be able to modify configuration from web-interface)
-  > conf/ (if you want your config READ-ONLY)
-  > .phar/
+
+   > *.php
+   > data/
+   > inc/ (if you want to be able to modify configuration from web-interface)
+   > conf/ (if you want your config READ-ONLY)
+   > .phar/
+
+Create zip from resulting directory and rename it to index.phar.
 
 2) Preparing Apache httpd 2.x
 
@@ -37,6 +41,22 @@ Create directory /wiki under DocumentRoot
 
 3) Place ht.access as .htaccess to /wiki
 
-4) 
+4) Place index.phar to /wiki
 
+5) Create data directory in /wiki using following command
+
+   mkdir -m 0777 -p data/pages data/attic data/index data/locks data/media data/media_attic data/media_meta data/
+meta data/tmp data/cache 
+
+6) If you want your wiki to be configurable from web-interface
+
+## Copy conf/ directory from this project to /wiki folder.
+
+## Make it writable
+
+   chmod a+rwx conf; chmod a+rw conf/*.php
+
+7) Ready!
+
+You are ready to use DokuWiki. Your wiki is already requires login. **Username is admin**. **Password is 123**.
 
