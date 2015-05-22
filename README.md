@@ -16,6 +16,7 @@ So for building just ZIP resulting dir and name it index.phar.
 
    > bin/
    > lib/
+   > conf/
    > inc/
    > *.php
 
@@ -45,20 +46,20 @@ Apache module mod_rewrite must be enabled. Add following to httpd.conf:
   
 Create directory /wiki under DocumentRoot
 
-## Place ht.access as .htaccess to /wiki
+#### Place ht.access as .htaccess to /wiki
 
-## Place index.phar to /wiki
+#### Place index.phar to /wiki
 
-## Create data directory in /wiki using following command
+#### Create data directory in /wiki using following command
 
    mkdir -m 0777 -p data/pages data/attic data/index data/locks data/media data/media_attic data/media_meta data/
 meta data/tmp data/cache 
 
-## If you want your wiki to be configurable from web-interface
+#### If you want your wiki to be configurable from web-interface
 
-### Copy conf/ directory from this project to /wiki folder.
+#### Copy conf/ directory from this project to /wiki folder.
 
-### Make it writable
+#### Make it writable
 
    chmod a+rwx conf; chmod a+rw conf/*.php
 
