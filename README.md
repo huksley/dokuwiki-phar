@@ -52,8 +52,7 @@ Create directory /wiki under DocumentRoot
 
 #### Create data directory in /wiki using following command
 
-   mkdir -m 0777 -p data/pages data/attic data/index data/locks data/media data/media_attic data/media_meta data/
-meta data/tmp data/cache 
+   mkdir -m 0777 -p data/pages data/attic data/index data/locks data/media data/media_attic data/media_meta data/meta data/tmp data/cache 
 
 #### If you want your wiki to be configurable from web-interface
 
