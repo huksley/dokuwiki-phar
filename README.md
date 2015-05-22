@@ -13,10 +13,10 @@ PHAR supports using ZIP (renamed to PHAR). Startup entry specified in file .phar
 So for building just ZIP resulting dir and name it index.phar.
 
 ## Dirs and files from dokuwiki.tar.gz:
-  > bin/
-  > lib/
-  > inc/
-  > *.php
+   > bin/
+   > lib/
+   > inc/
+   > *.php
 
 ## Dirs and files from this project:
   > *.php
