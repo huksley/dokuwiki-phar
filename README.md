@@ -29,6 +29,10 @@ So for building just ZIP resulting dir and name it index.phar.
 #### If you want your wiki to be configurable from web-interface, copy following dirs:
 
    > inc/
+   
+Change inc/init.php, line 18 to following (remove fullpath(xxx)):
+
+   $preload = dirname(__FILE__).'/preload.php';   
 
 #### If you want your configuration be READ-ONLY, copy following dirs:
 
@@ -40,9 +44,11 @@ Create zip from resulting directory and rename it to index.phar.
 
 Apache module mod_rewrite must be enabled. Add following to httpd.conf:
 
-  AddType application/x-httpd-php .phar
-  DirectoryIndex index.phar
-  AllowOverride all
+   AddType application/x-httpd-php .phar
+   <Directory /abs/path/to/wiki>
+      DirectoryIndex index.phar
+      AllowOverride all
+   </Directory>
   
 Create directory /wiki under DocumentRoot
 
@@ -52,7 +58,8 @@ Create directory /wiki under DocumentRoot
 
 #### Create data directory in /wiki using following command
 
-   mkdir -m 0777 -p data/pages data/attic data/index data/locks data/media data/media_attic data/media_meta data/meta data/tmp data/cache 
+   mkdir -m 0777 -p data/pages data/attic data/index data/locks data/media data/media_attic data/media_meta \
+      data/meta data/tmp data/cache 
 
 #### If you want your wiki to be configurable from web-interface
 
