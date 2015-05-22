@@ -12,24 +12,24 @@ Currenly only supporting serving from /wiki prefix.
 PHAR supports using ZIP (renamed to PHAR). Startup entry specified in file .phar/stub.php.
 So for building just ZIP resulting dir and name it index.phar.
 
-### Dirs and files from dokuwiki.tar.gz:
+#### Dirs and files from dokuwiki.tar.gz:
 
    > bin/
    > lib/
    > inc/
    > *.php
 
-### Dirs and files from this project:
+#### Dirs and files from this project:
 
    > *.php
    > data/
    > .phar/
 
-### If you want your wiki to be configurable from web-interface, copy following dirs:
+#### If you want your wiki to be configurable from web-interface, copy following dirs:
 
    > inc/
 
-### If you want your configuration be READ-ONLY, copy following dirs:
+#### If you want your configuration be READ-ONLY, copy following dirs:
 
    > conf/
 
