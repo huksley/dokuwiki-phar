@@ -1,0 +1,21 @@
+<Files ~ "^([\._]ht|README$|VERSION$|COPYING$)">
+    Order allow,deny
+    Deny from all
+</Files>
+
+RewriteEngine on
+RewriteBase /wiki
+
+RewriteRule ^index.phar/_media/(.*)   _media/$1  [QSA,R,L]
+RewriteRule ^_media/(.*)              index.phar/media.php?media=$1  [QSA,L]
+RewriteRule ^_detail/(.*)             index.phar/detail.php?media=$1  [QSA,L]
+RewriteRule ^_export/([^/]+)/(.*)     index.phar/phar.php?do=export_$1&id=$2  [QSA,L]
+RewriteRule ^data/security\.png$      index.phar/data/security.png [L]
+RewriteRule ^$                        start  [R,L]
+
+RewriteRule ^lib/(.*)                 index.phar/lib/$1 [QSA,L]
+
+RewriteCond %{REQUEST_FILENAME}       !-f
+RewriteCond %{REQUEST_FILENAME}       !-d
+RewriteRule (.*)                      index.phar/phar.php?id=$1  [QSA,L]
+RewriteRule ^index.php$               index.phar/phar.php [QSA,L]
